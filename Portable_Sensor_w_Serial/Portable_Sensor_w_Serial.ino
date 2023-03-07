@@ -239,15 +239,23 @@ void printTemp(bool scale){
 
 void printHumid(){
   if (!err){
-    //set cursor for Humidity
-    lcd.setCursor(7,1);
     
     //ready DHT11
     wait_for_dht11();
     start_signal(DHT_PIN);
     
-    //print humidity 
-    lcd.print(read_dht_humid());
+    //read humidity
+    int hm = 0;
+    hm = read_dht_humid();
+    if (hm < 10) {
+      lcd.setCursor(7,1);
+      lcd.print("0");
+      lcd.setCursor(8,1);
+    } else {
+    //set cursor for Humidity >=10
+    lcd.setCursor(7,1);
+    }
+    lcd.print(hm);
     lcd.setCursor(9,1);
     lcd.print("%");
   }
