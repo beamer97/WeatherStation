@@ -10,6 +10,6 @@ Create a version to run on the Raspberry Pi
 Would just be the Temp/Humidity sensor through the GPIO pins (maybe make something work with the tiny OLED screen)
 This would act as the 'Home Base' and serve to update the Home table of the DB
 
-Need to create executable for running the serial and database communications communications [C over current Pyhton implementation]
+Need to create executable for running the serial and database communications communications [C over current Python implementation]
 
 Need a dashboard screen to be able to display data
